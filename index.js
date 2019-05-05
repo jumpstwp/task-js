@@ -16,15 +16,9 @@ const words = [
   "MONJA",
   "ALEXIS"
 ];
-words.sort();
-// const splitWords = words[0].split("");
-let splitResult = [];
-// Split the word to character.
-const splitWords = words.map(word => {
-  splitResult.push(word.split(""));
-});
-
+console.log(words);
 const comepareWords = [...words];
+words.sort();
 
 function mutation(arr) {
   arr[0] = arr[0].toLowerCase();
@@ -37,6 +31,11 @@ function mutation(arr) {
 }
 
 const result = [];
+function duplicate(arr, word) {
+  for (let i = 0; i < arr.length; i++) {
+    return arr[i].indexOf(word) > -1;
+  }
+}
 
 for (let i = 0; i < words.length; i++) {
   for (let j = 0; j < comepareWords.length; j++) {
@@ -45,12 +44,14 @@ for (let i = 0; i < words.length; i++) {
       words[i] != comepareWords[j]
     ) {
       console.log(`${words[i]} - ${comepareWords[j]}`);
-      //   console.log(comepareWords[j]);
+    } else {
+      continue;
     }
   }
 }
 // console.log(mutation(["AMOR", "XISELA"]));
 
+console.log(` --- Task 2 ---`);
 // Task 2
 /**
  * 
